@@ -1,0 +1,43 @@
+//  Напишите программу, которая принимает на вход число и выдаёт сумму цифр в числе.
+
+// 452 -> 11
+// 82 -> 10
+// 9012 -> 12
+
+// Делаем функцию которая принимает на вход строку и возвращает число. 
+int ReadData(int line)
+{
+    Console.WriteLine(line);
+    int coord = int.Parse(Console.ReadLine()??"");
+    return coord;
+}
+// Делаем функцию, которая переводит число в строку, а затем в массив и суммирует элементы массива в переменной total.
+int Summation(int num)
+{
+    int total = 0;
+    string str = num.ToString();
+    int[] numbe = new int[str.Length];
+    for(int i = 0; i < str.Length; i ++)
+    {
+        numbe[i] = int.Parse(str[i].ToString());
+        total = numbe[i] + total;
+
+    }
+    return total;
+}
+
+
+// Делаем функцию для вывода текста на экран.
+void PrintData(string pref, string val)
+{
+    Console.WriteLine(pref + val);
+}
+// Пишем переменные, которые буду считаны с клавиатуры.
+
+Console.WriteLine("Введите число ");
+int num = int.Parse(Console.ReadLine());
+
+int result = Summation(num);
+// Выводим результат через функцию PrintData.
+PrintData("Результат: ", result.ToString());
+
